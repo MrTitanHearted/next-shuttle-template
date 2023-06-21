@@ -1,0 +1,26 @@
+{
+  "name": "next-shuttle-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run build && concurrently --names \"next, shuttle\" --kill-others \"cargo shuttle run --working-directory ./backend/\"",
+    "build": "next build",
+    "start": "cargo shuttle project start --working-directory ./backend/",
+    "lint": "next lint",
+    "shuttle-login": "cargo shuttle login --working-directory ./backend/",
+    "deploy": "npm run build && cargo shuttle deploy --working-directory ./backend/ --allow-dirty",
+    "stop": "cargo shuttle project stop --working-directory ./backend/"
+  },
+  "dependencies": {
+    "@types/node": "20.3.1",
+    "@types/react": "18.2.13",
+    "@types/react-dom": "18.2.6",
+    "autoprefixer": "10.4.14",
+    "next": "13.4.6",
+    "postcss": "8.4.24",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.1.3"
+  }
+}
